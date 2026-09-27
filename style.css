@@ -3,76 +3,72 @@
     --bg-panel-cyber: #1e113a;
     --accent-magenta: #e91e63;
     --accent-cyan: #00bcd4;
-    --accent-cyan-dark: #0097a7;
     --text-white: #ffffff;
     --text-dimmed: #b2a8d3;
-    --pioneer-dark: #190e34;
-    --pioneer-blue: #00bcd4;
     --whats-green: #25d366;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, sans-serif; }
-html { scroll-behavior: smooth; background-color: var(--bg-dark-purple); }
-body { color: var(--text-white); line-height: 1.6; overflow-x: hidden; }
+html { scroll-behavior: smooth; }
+body { color: var(--text-white); line-height: 1.6; overflow-x: hidden; background-color: #0d0820; position: relative; }
 
-#studio-particles-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; pointer-events: none; }
+/* ===== FUNDO DO SITE INTEIRO - FUNCIONA NO CELULAR ===== */
+body::before{
+  content:'';
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  height:100vh;
+  height:100dvh;
+  background-image: url('img/fundo.jpg');
+  background-size: cover;
+  background-position: center top;
+  z-index: -2;
+}
+body::after{
+  content:'';
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  height:100vh;
+  height:100dvh;
+  background: linear-gradient(180deg, rgba(13,8,32,0.6) 0%, rgba(13,8,32,0.9) 100%);
+  z-index: -1;
+}
+#studio-particles-bg{ position: fixed; top:0; left:0; width:100vw; height:100vh; z-index: -1; pointer-events: none; opacity:0.7; }
 
-.mobile-contact-bar { position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; background: rgba(30, 17, 58, 0.96); backdrop-filter: blur(10px); border-top: 1px solid rgba(255, 255, 255, 0.05); display: none; grid-template-columns: 1fr 1fr; z-index: 9999; }
-.m-btn { display: flex; align-items: center; justify-content: center; text-decoration: none; color: #fff; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; }
-.m-insta { background: #1a0f33; color: var(--accent-cyan); }
-.m-whats { background: var(--accent-cyan); color: #000; }
-
-header { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; background: rgba(13, 7, 30, 0.9); position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.02); }
-.logo { font-size: 25px; font-weight: 900; letter-spacing: 4px; font-family: 'Cinzel', serif; }
-.logo-sub { font-size: 9px; letter-spacing: 4px; color: var(--accent-magenta); margin-top: 4px; display: block; }
-.animate-logo-glow { animation: neonPulse 2.5s infinite alternate ease-in-out; }
-@keyframes neonPulse { 0% { text-shadow: 0 0 10px rgba(0, 188, 212, 0.4); color: #fff; } 100% { text-shadow: 0 0 20px rgba(0, 188, 212, 0.9); color: var(--accent-cyan); } }
-nav a { color: var(--text-white); text-decoration: none; margin-left: 28px; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; }
+/* Header */
+header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: rgba(13, 7, 30, 0.92); position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+.logo { font-size: 24px; font-weight: 900; letter-spacing: 4px; font-family: 'Cinzel', serif; }
+.logo-sub { font-size: 9px; letter-spacing: 4px; color: var(--accent-magenta); display: block; }
+.animate-logo-glow { animation: neonPulse 2.5s infinite alternate; }
+@keyframes neonPulse { 0% { text-shadow: 0 0 10px rgba(0,188,212,0.4); } 100% { text-shadow: 0 0 20px rgba(0,188,212,0.9); color: var(--accent-cyan); } }
+nav a { color: #fff; text-decoration: none; margin-left: 24px; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; }
 nav a.nav-btn { border: 1px solid var(--accent-cyan); color: var(--accent-cyan) !important; padding: 10px 22px; border-radius: 20px; }
 
+/* Hero */
 .hero { min-height: 100vh; display: flex; align-items: center; padding: 140px 8% 80px; }
 .hero-content-split { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; width: 100%; align-items: center; }
-.hero-tagline { display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 5px; color: var(--accent-magenta); font-weight: 700; margin-bottom: 15px; }
-.animated-logo { font-family: 'Cinzel', serif; font-size: 3.8rem; }
+.hero-tagline { font-size: 11px; letter-spacing: 5px; color: var(--accent-magenta); font-weight: 700; margin-bottom: 15px; display:block; }
+.animated-logo { font-family: 'Cinzel', serif; font-size: 3.2rem; line-height:1.1; }
 .animated-logo span { color: var(--accent-magenta); }
-.hero p { font-size: 1.15rem; color: var(--text-dimmed); margin-bottom: 40px; }
-.btn { background: var(--accent-cyan); color: #000; padding: 16px 45px; border: none; border-radius: 25px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-size: 11px; }
-.hero-vector-side { position: relative; display: flex; justify-content: center; }
-.hero-vector-img { width: 100%; max-width: 440px; border-radius: 20px; z-index: 2; border: 2px solid rgba(233, 30, 99, 0.2); filter: hue-rotate(280deg); }
+.hero p { font-size: 1.1rem; color: var(--text-dimmed); margin: 20px 0 30px; }
+.btn { background: var(--accent-cyan); color: #000; padding: 16px 40px; border: none; border-radius: 25px; font-weight: 800; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; font-size: 11px; }
+.hero-vector-img { width: 100%; max-width: 440px; border-radius: 20px; border: 2px solid rgba(233,30,99,0.2); }
 
-.packages-section { padding: 120px 8%; background-color: var(--bg-panel-cyber); }
-.packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 30px; }
-.package-card { background: #160d2e; padding: 50px 35px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.02); display: flex; flex-direction: column; transition: all 0.3s; }
-.package-card:hover { border-color: var(--accent-magenta); transform: translateY(-5px); }
-.card-category { font-size: 9px; text-transform: uppercase; color: var(--accent-cyan); font-weight: 600; letter-spacing: 2px; }
-.btn-pack { background: transparent; border: 1px solid rgba(0, 188, 212, 0.3); color: var(--accent-cyan); text-decoration: none; padding: 14px; text-align: center; font-size: 11px; text-transform: uppercase; border-radius: 20px; display: block; margin-top: auto; }
+/* Serviços */
+.packages-section { padding: 80px 8%; background: rgba(30,17,58,0.6); backdrop-filter: blur(5px); }
+.packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 25px; }
+.package-card { background: #160d2e; padding: 40px 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
+.card-category { font-size: 9px; color: var(--accent-cyan); letter-spacing: 2px; }
+.btn-pack { border: 1px solid rgba(0,188,212,0.3); color: var(--accent-cyan); text-decoration: none; padding: 12px; text-align: center; font-size: 11px; border-radius: 20px; display: block; margin-top: 20px; }
 
-/* MESA ANTIGA - DEIXEI ISOLADA */
-.pioneer-console { max-width: 950px; margin: 50px auto 0; background: #160d2e; border: 4px solid #281850; border-radius: 12px; padding: 25px; }
-.decks-container { display: flex; justify-content: space-between; gap: 20px; }
-.pioneer-deck { flex: 1; background: var(--pioneer-dark); border-radius: 8px; padding: 30px 15px; text-align: center; }
-.jog-wheel { width: 210px; height: 210px; background: radial-gradient(circle, #080413 35%, #180e33 36%, #281754 65%, #070411 70%); border-radius: 50%; margin: 0 auto; position: relative; border: 5px solid #361f6d; }
-.jog-wheel.playing { animation: spinJog 2.5s linear infinite; }
-@keyframes spinJog { 100% { transform: rotate(360deg); } }
-
-/* SEÇÃO CONTATO COM ICONE BOTAO */
-.secao-contatos{ background:#0f1520; padding:60px 20px; }
-.contatos-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; max-width:900px; margin:0 auto; }
-.contato-card{ background:#fff; border-radius:12px; padding:30px 20px; text-align:center; transition:0.3s; }
-.contato-card:hover{ transform:translateY(-6px); box-shadow:0 15px 30px rgba(0,0,0,0.3); }
-.contato-card.destaque{ border:2px solid #25d366; }
-.icone-botao{ width:70px; height:70px; background:#e6f9f5; color:#00c2a0; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 15px; font-size:28px; text-decoration:none; transition:0.3s; }
-.icone-botao.wpp{ background:#d1fae5; color:#25d366; }
-.icone-botao.email{ background:#e0e7ff; color:#4f46e5; }
-.contato-card h3{ font-size:12px; color:#1e2a4a; letter-spacing:1px; margin-bottom:8px; }
-.contato-card p{ color:#333; font-weight:600; font-size:14px; }
-
-/* MESA NOVA DJ MATO - FUNCIONAL - CLASSES UNICAS PRA NAO CONFLITAR */
-.mesa-mato{ max-width:850px; margin:30px auto; background:#112157; border:3px solid #2a4bd0; border-radius:15px; padding:15px; box-shadow:0 0 30px #2a4bd0aa; position:relative; isolation:isolate; }
+/* MESA DJ MATO */
+.mesa-mato{ max-width:850px; margin:0 auto; background:#112157; border:3px solid #2a4bd0; border-radius:15px; padding:15px; box-shadow:0 0 30px #2a4bd0aa; position:relative; }
 .mesa-topo{ display:flex; justify-content:space-between; background:#000; padding:10px 15px; border-radius:8px; color:#4de8d0; font-size:12px; letter-spacing:2px; }
 .mesa-corpo{ display:grid; grid-template-columns:1fr 110px 1fr; gap:10px; margin-top:12px; }
-.mesa-mato .deck-mato{ background:#19307a; border-radius:10px; padding:12px; text-align:center; }
-.mesa-mato .deck-mato small{ color:#4de8d0; font-weight:700; display:block; }
+.deck-mato{ background:#19307a; border-radius:10px; padding:12px; text-align:center; }
+.deck-mato small{ color:#4de8d0; font-weight:700; display:block; }
 .jog-mato{ width:110px; height:110px; margin:12px auto; border-radius:50%; background:radial-gradient(#3a6cff,#0a1a5c); border:3px solid #4de8d0; position:relative; }
 .jog-mato::after{ content:''; position:absolute; top:10px; left:50%; width:8px; height:8px; background:#fff; border-radius:50%; transform:translateX(-50%); }
 .jog-mato.tocando{ animation:girar 1.5s linear infinite; }
@@ -84,33 +80,34 @@ nav a.nav-btn { border: 1px solid var(--accent-cyan); color: var(--accent-cyan) 
 .btn-contratar{ display:block; margin-top:15px; background:#25d366; color:#fff; padding:8px; border-radius:20px; text-decoration:none; font-size:11px; font-weight:800; }
 @keyframes girar{ to{ transform:rotate(360deg); } }
 
-@media(max-width:700px){ .mesa-corpo{grid-template-columns:1fr} .mixer-mato{order:-1} }
-/* FUNDO DO SITE INTEIRO COM SUA IMAGEM */
-body{
-  background-image: url('img/01.avif');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  position: relative;
-}
+/* Contatos */
+.secao-contatos{ background:rgba(15,21,32,0.8); padding:60px 20px; }
+.contatos-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; max-width:900px; margin:0 auto; }
+.contato-card{ background:#fff; border-radius:12px; padding:30px 20px; text-align:center; }
+.icone-botao{ width:70px; height:70px; background:#e6f9f5; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 15px; font-size:28px; text-decoration:none; }
+.icone-botao.wpp{ background:#d1fae5; color:#25d366; }
+.icone-botao.email{ background:#e0e7ff; color:#4f46e5; }
+.contato-card h3{ font-size:12px; color:#1e2a4a; letter-spacing:1px; margin-bottom:8px; }
+.contato-card p{ color:#333; font-weight:600; font-size:14px; }
 
-/* Escurece o fundo pra letra ficar legível */
-body::before{
-  content:'';
-  position:fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background: rgba(13, 8, 32, 0.85);
-  z-index: -1;
-}
+/* Barra mobile */
+.mobile-contact-bar { position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; background: rgba(30,17,58,0.96); display: none; grid-template-columns: 1fr 1fr; z-index: 9999; }
+.m-btn { display: flex; align-items: center; justify-content: center; text-decoration: none; color: #fff; font-weight: 700; font-size: 0.85rem; }
+.m-insta { background: #1a0f33; color: var(--accent-cyan); }
+.m-whats { background: var(--accent-cyan); color: #000; }
 
-/* Canvas das notas por cima do fundo */
-#studio-particles-bg{
-  position: fixed;
-  top:0; left:0;
-  width:100vw;
-  height:100vh;
-  z-index: -1;
-  pointer-events: none;
+/* MOBILE */
+@media(max-width: 768px){
+  body::before{ background-position: 65% center; }
+  body::after{ background: rgba(13,8,32,0.85); }
+  #studio-particles-bg{ opacity:0.35; }
+  .hero{ padding:100px 6% 60px; }
+  .hero-content-split{ grid-template-columns:1fr; text-align:center; }
+  .hero-vector-side{ display:none; }
+  .animated-logo{ font-size:2.2rem; }
+  .mesa-corpo{ grid-template-columns:1fr; gap:20px; }
+  .mixer-mato{ order:-1; }
+  header nav{ display:none; }
+  .mobile-contact-bar{ display:grid; }
+  body{ padding-bottom:60px; }
 }
