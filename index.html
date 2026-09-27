@@ -3,58 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJ MATO | Gravadora, Composição e Selo Estúdio CRIA Style</title>
-    <!-- Importação de fontes urbanas de peso limpo e moderno -->
+    <title>DJ MATO Studios | Gravadora, Selo e Produção Musical</title>
+    <!-- Fontes oficiais do estilo digital e moderno (Cinzel e Inter) -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- CANVAS PARA O MOTOR DE NOTAS MUSICAIS EM MOVIMENTO -->
-    <canvas id="music-symbols-bg"></canvas>
+    <!-- CANVAS PARA A ANIMAÇÃO DE SÍMBOLOS MUSICAIS FLUTUANTES -->
+    <canvas id="studio-particles-bg"></canvas>
 
-    <!-- BARRA FIXA PARA DISPOSITIVOS MÓVEIS -->
+    <!-- BARRA FIXA PARA SMARTPHONES -->
     <div class="mobile-contact-bar">
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="m-btn m-insta">Instagram</a>
         <a href="https://wa.me!" target="_blank" rel="noopener noreferrer" class="m-btn m-whats">WhatsApp</a>
     </div>
 
-    <!-- Menu Superior Estilo Estúdio CRIA -->
+    <!-- Menu Superior Estilo Digital Cyber -->
     <header>
         <div class="logo-container">
-            <div class="logo animate-text-neon">DJ MATO</div>
-            <span class="logo-sub">STUDIOS & SELO</span>
+            <div class="logo animate-logo-glow">DJ MATO</div>
+            <span class="logo-sub">RECORD LABEL</span>
         </div>
         <nav>
             <a href="#home">Início</a>
-            <a href="#packages">Serviços</a>
-            <a href="#beats">Mesa DJ</a>
+            <a href="#packages">Selo</a>
+            <a href="#beats">Mesa Virtual</a>
             <a href="#media-gallery">Clipes</a>
             <a href="#contact" class="nav-btn">Contato</a>
         </nav>
     </header>
 
-    <!-- Seção Hero — Impacto Urbano -->
+    <!-- Seção Hero — Rock & Cyber Music Style -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <span class="hero-tagline">GRAVADORA // SELO FONOGRÁFICO • COMPOSIÇÃO</span>
-            <h1 class="animated-logo">A fábrica de <span>hits</span> da nova cena musical</h1>
-            <p>Produção de beats pesados, mixagem comercial de alto nível e composições inéditas sob medida. O espaço feito para tirar sua música do papel e jogar no mundo.</p>
-            <button class="btn btn-animate" id="hero-btn">Lançar Meu Som</button>
-        </div>
-        <div class="hero-image-container">
-            <div class="hero-image-overlay"></div>
-            <img src="imagens/02.jpg" alt="DJ MATO Studio Sessions" class="hero-central-img">
+        <div class="hero-content-split">
+            <div class="hero-text-side">
+                <span class="hero-tagline">GRAVADORA & COMPOSIÇÃO</span>
+                <h1 class="animated-logo">Lapidando talentos, distribuindo <span>hits</span></h1>
+                <p>Produção fonográfica completa, composição musical exclusiva e licenciamento de obras. O selo boutique feito para levar o seu som às plataformas globais.</p>
+                <button class="btn btn-animate" id="hero-btn">Get started!</button>
+            </div>
+            <!-- Lado Ilustrativo baseado na Imagem Enviada -->
+            <div class="hero-vector-side">
+                <div class="vector-glow-backdrop"></div>
+                <img src="https://unsplash.com" alt="Music Style Concept" class="hero-vector-img">
+            </div>
         </div>
     </section>
 
-    <!-- Vitrine de Serviços -->
+    <!-- Serviços da Gravadora -->
     <section class="packages-section" id="packages">
         <div class="section-header-clean">
-            <span class="section-subtitle-top">O QUE FAZEMOS</span>
-            <h2 class="section-title">Nossas Soluções Fonográficas</h2>
+            <span class="section-subtitle-top">SOLUÇÕES</span>
+            <h2 class="section-title">Nossos Serviços</h2>
             <div class="luxury-divider"></div>
         </div>
         
@@ -63,12 +66,6 @@
                 <span class="card-category">AUDIO PRODUCTION</span>
                 <h3>Produção e Selo</h3>
                 <p class="pack-desc">Criação de instrumentais e arranjos exclusivos, captação de voz em alto padrão, mixagem e masterização analógica prontas para o mercado.</p>
-                <ul class="pack-features">
-                    <li>Direção artística e fonográfica dedicada</li>
-                    <li>Selo independente com distribuição global</li>
-                    <li>Engenharia de áudio premium (Mix & Master)</li>
-                    <li>Identidade sonora exclusiva para o artista</li>
-                </ul>
                 <a href="https://wa.me!" target="_blank" rel="noopener noreferrer" class="btn-pack">Enviar Demo</a>
             </div>
 
@@ -76,12 +73,6 @@
                 <span class="card-category">SONGWRITING & LYRICS</span>
                 <h3>Composição Exclusiva</h3>
                 <p class="pack-desc">Desenvolvimento de letras, melodias e guias completas personalizadas para o seu estilo vocal e positioning de carreira.</p>
-                <ul class="pack-features">
-                    <li>Músicas inéditas criadas sob medida</li>
-                    <li>Gestão de direitos autorais e editoriais</li>
-                    <li>Criação de toplines melódicas marcantes</li>
-                    <li>Linguagem focada no mercado de streaming</li>
-                </ul>
                 <a href="https://wa.me!" target="_blank" rel="noopener noreferrer" class="btn-pack">Encomendar Letra</a>
             </div>
 
@@ -89,22 +80,16 @@
                 <span class="card-category">MUSIC BUSINESS</span>
                 <h3>Licenciamento</h3>
                 <p class="pack-desc">Inserção de músicas em campanhas publicitárias, trilhas sonoras e gestão completa de Royalties junto aos órgãos de arrecadação.</p>
-                <ul class="pack-features">
-                    <li>Registro fonográfico (ISRC) imediato</li>
-                    <li>Pitching para grandes playlists editoriais</li>
-                    <li>Contratos de licenciamento transparentes</li>
-                    <li>Consultoria de direitos musicais e ECAD</li>
-                </ul>
                 <a href="https://wa.me!" target="_blank" rel="noopener noreferrer" class="btn-pack">Saber Mais</a>
             </div>
         </div>
     </section>
 
-    <!-- INTERFACE INTERATIVA DO CONTROLADOR DJ PIONEER -->
+    <!-- CONTROLADOR VIRTUAL PIONEER DJ -->
     <section class="portfolio" id="beats">
         <div class="section-header-clean">
-            <span class="section-subtitle-top">VIRTUAL EQUIPMENT</span>
-            <h2 class="section-title">Setup Control Station</h2>
+            <span class="section-subtitle-top">PRO DJ SYSTEM</span>
+            <h2 class="section-title">Virtual Setup Control</h2>
             <div class="luxury-divider"></div>
         </div>
 
@@ -168,10 +153,10 @@
         </div>
     </section>
 
-    <!-- VIDEOCLIPES DA PERIGO BEATS REESTILIZADOS -->
+    <!-- GALERIA DE VIDEOCLIPES OFICIAIS CANAL PERIGO BEATS -->
     <section class="media-section" id="media-gallery">
         <div class="section-header-clean">
-            <span class="section-subtitle-top">RELEASES</span>
+            <span class="section-subtitle-top">VISUAL AUDIO</span>
             <h2 class="section-title">Videoclipes Oficiais</h2>
             <div class="luxury-divider"></div>
         </div>
@@ -192,3 +177,20 @@
                 </div>
                 <div class="media-info">
                     <h4>MALANDRA MANIACA</h4>
+                    <p>Processo de composição de letra e arranjos no estúdio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE CONTATO ATUALIZADA LADO A LADO - COM ÍCONES E DADOS EXPOSTOS -->
+    <section class="contact-section" id="contact">
+        <div class="contact-hub-wrapper">
+            <div class="studio-status-container">
+                <div class="studio-status-anim"><span class="status-dot"></span> Selo Aberto para Audições</div>
+            </div>
+            <h3 class="hub-main-title">Canais Diretos de Atendimento</h3>
+            <p class="hub-main-subtitle">Todas as informações de contato oficiais da DJ MATO Studios estão listadas ao lado com os ícones integrados:</p>
+
+            <div class="contact-blocks-horizontal">
+                <!-- WhatsApp Card -->
