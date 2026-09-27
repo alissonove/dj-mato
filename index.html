@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ MATO | Gravadora, Composição e Selo Estúdio CRIA Style</title>
+    <!-- Importação de fontes urbanas de peso limpo e moderno -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CANVAS PARA O MOTOR DE NOTAS MUSICAIS EM MOVIMENTO -->
+    <canvas id="music-symbols-bg"></canvas>
+
+    <!-- BARRA FIXA PARA DISPOSITIVOS MÓVEIS -->
+    <div class="mobile-contact-bar">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="m-btn m-insta">Instagram</a>
+        <a href="https://wa.me!" target="_blank" rel="noopener noreferrer" class="m-btn m-whats">WhatsApp</a>
+    </div>
+
+    <!-- Menu Superior Estilo Estúdio CRIA -->
+    <header>
+        <div class="logo-container">
+            <div class="logo animate-text-neon">DJ MATO</div>
+            <span class="logo-sub">STUDIOS & SELO</span>
+        </div>
+        <nav>
+            <a href="#home">Início</a>
+            <a href="#packages">Serviços</a>
+            <a href="#beats">Mesa DJ</a>
+            <a href="#media-gallery">Clipes</a>
+            <a href="#contact" class="nav-btn">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Seção Hero — Impacto Urbano -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="hero-tagline">GRAVADORA // SELO FONOGRÁFICO • COMPOSIÇÃO</span>
+            <h1 class="animated-logo">A fábrica de <span>hits</span> da nova cena musical</h1>
+            <p>Produção de beats pesados, mixagem comercial de alto nível e composições inéditas sob medida. O espaço feito para tirar sua música do papel e jogar no mundo.</p>
+            <button class="btn btn-animate" id="hero-btn">Lançar Meu Som</button>
+        </div>
+        <div class="hero-image-container">
+            <div class="hero-image-overlay"></div>
+            <img src="imagens/02.jpg" alt="DJ MATO Studio Sessions" class="hero-central-img">
+        </div>
+    </section>
+
+    <!-- Vitrine de Serviços -->
+    <section class="packages-section" id="packages">
+        <div class="section-header-clean">
+            <span class="section-subtitle-top">O QUE FAZEMOS</span>
+            <h2 class="section-title">Nossas Soluções Fonográficas</h2>
+            <div class="luxury-divider"></div>
+        </div>
+        
+        <div class="packages-grid">
+            <div class="package-card">
+                <span class="card-category">AUDIO PRODUCTION</span>
+                <h3>Produção e Selo</h3>
+                <p class="pack-desc">Criação de instrumentais e arranjos exclusivos, captação de voz em alto padrão, mixagem e masterização analógica prontas para o mercado.</p>
+                <ul class="pack-features">
+                    <li>Direção artística e fonográfica dedicada</li>
+                    <li>Selo independente com distribuição global</li>
+                    <li>Engenharia de áudio premium (Mix & Master)</li>
+                    <li>Identidade sonora exclusiva para o artista</li>
+                </ul>
+                <a href="https://wa.me!" target="_blank" rel="noopener noreferrer" class="btn-pack">Enviar Demo</a>
+            </div>
+
+            <div class="package-card featured-pack">
+                <span class="card-category">SONGWRITING & LYRICS</span>
+                <h3>Composição Exclusiva</h3>
+                <p class="pack-desc">Desenvolvimento de letras, melodias e guias completas personalizadas para o seu estilo vocal e positioning de carreira.</p>
+                <ul class="pack-features">
+                    <li>Músicas inéditas criadas sob medida</li>
+                    <li>Gestão de direitos autorais e editoriais</li>
+                    <li>Criação de toplines melódicas marcantes</li>
+                    <li>Linguagem focada no mercado de streaming</li>
+                </ul>
+                <a href="https://wa.me!" target="_blank" rel="noopener noreferrer" class="btn-pack">Encomendar Letra</a>
+            </div>
+
+            <div class="package-card">
+                <span class="card-category">MUSIC BUSINESS</span>
+                <h3>Licenciamento</h3>
+                <p class="pack-desc">Inserção de músicas em campanhas publicitárias, trilhas sonoras e gestão completa de Royalties junto aos órgãos de arrecadação.</p>
+                <ul class="pack-features">
+                    <li>Registro fonográfico (ISRC) imediato</li>
+                    <li>Pitching para grandes playlists editoriais</li>
+                    <li>Contratos de licenciamento transparentes</li>
+                    <li>Consultoria de direitos musicais e ECAD</li>
+                </ul>
+                <a href="https://wa.me!" target="_blank" rel="noopener noreferrer" class="btn-pack">Saber Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERFACE INTERATIVA DO CONTROLADOR DJ PIONEER -->
+    <section class="portfolio" id="beats">
+        <div class="section-header-clean">
+            <span class="section-subtitle-top">VIRTUAL EQUIPMENT</span>
+            <h2 class="section-title">Setup Control Station</h2>
+            <div class="luxury-divider"></div>
+        </div>
+
+        <div class="pioneer-console" id="pioneer-console">
+            <audio id="main-audio" crossorigin="anonymous"></audio>
+            
+            <div class="dj-display">
+                <div class="wave-deck">
+                    <span id="current-title">Selecione uma faixa</span>
+                    <div class="wave-visualizer"><div class="wave-line"></div></div>
+                </div>
+                <div class="display-timer" id="current-time">0:00</div>
+            </div>
+
+            <div class="decks-container">
+                <div class="pioneer-deck">
+                    <div class="deck-brand">Pioneer</div>
+                    <div class="jog-wheel" id="vinyl-l">
+                        <div class="jog-inner-display">
+                            <div class="jog-led-pointer"></div>
+                        </div>
+                    </div>
+                    <div class="deck-controls">
+                        <button class="dj-cue" id="cue-btn-l">CUE</button>
+                        <button class="dj-play-pause btn-scale-animate" id="play-btn-l">▶</button>
+                    </div>
+                </div>
+
+                <div class="central-mixer">
+                    <div class="mixer-brand">VIRTUALLY</div>
+                    <div class="v-led-container">
+                        <div class="led-bar"><div class="led-fill" id="led-l"></div></div>
+                        <div class="led-bar"><div class="led-fill" id="led-r"></div></div>
+                    </div>
+                    <div class="faders-rack">
+                        <div class="mixer-knob"></div>
+                        <div class="fader-track"><div class="fader-handle" style="bottom: 70%"></div></div>
+                    </div>
+                </div>
+
+                <div class="pioneer-deck">
+                    <div class="deck-brand">Pioneer</div>
+                    <div class="jog-wheel" id="vinyl-r">
+                        <div class="jog-inner-display">
+                            <div class="jog-led-pointer"></div>
+                        </div>
+                    </div>
+                    <div class="deck-controls">
+                        <button class="dj-cue" id="cue-btn-r">CUE</button>
+                        <button class="dj-play-pause btn-scale-animate" id="play-btn-r">▶</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="global-player-controls">
+                <div class="progress-bar-container" id="progress-container">
+                    <div class="p-bar"><div class="p-fill" id="progress-fill"></div></div>
+                </div>
+                <div class="track-list" id="track-list"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEOCLIPES DA PERIGO BEATS REESTILIZADOS -->
+    <section class="media-section" id="media-gallery">
+        <div class="section-header-clean">
+            <span class="section-subtitle-top">RELEASES</span>
+            <h2 class="section-title">Videoclipes Oficiais</h2>
+            <div class="luxury-divider"></div>
+        </div>
+        
+        <div class="media-grid">
+            <div class="media-card video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://youtube.com" title="PREPARA O COPO 2 - Perigo Beats" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="media-info">
+                    <h4>PREPARA O COPO 2</h4>
+                    <p>Produção fonográfica por DJ MATO Studios & Perigo Beats.</p>
+                </div>
+            </div>
+            <div class="media-card video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://youtube.com" title="MALANDRA MANIACA - Perigo Beats" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="media-info">
+                    <h4>MALANDRA MANIACA</h4>

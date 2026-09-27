@@ -1,0 +1,458 @@
+/* ==========================================================================
+   PROJETO: DJ MATO STUDIOS (RECORD LABEL & PRODUCTION)
+   ESTILO: CRIA ESTÚDIO INSPIRED + AUDIO SYMBOLS BACKGROUND MOTOR
+   ARQUITETURA: COMPATÍVEL COM VISUAL STUDIO CODE
+   ========================================================================== */
+
+:root {
+    --bg-dark-base: #060608;       /* Cinza escuro/preto corporativo premium */
+    --panel-dark-matte: #0e0e13;   /* Painéis internos e blocos de conteúdo */
+    --accent-gold-cria: #c5a880;   /* Dourado Nobre Acetinado */
+    --accent-neon-pulse: #ff5500;  /* Laranja Eletrizante para ativações e LEDs */
+    --text-white: #ffffff;
+    --text-dimmed: #848492;
+    --pioneer-dark-bg: #14141a;
+    --pioneer-blue: #0088ff;
+    --whats-green: #25d366;
+    --insta-magenta: #e1306c;
+}
+
+/* 1. CONFIGURAÇÕES BASE E ALTA PERFORMANCE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-dark-base);
+}
+
+body {
+    color: var(--text-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* 2. CANVAS DO MOTOR DE SÍMBOLOS MUSICAIS (NOTAS E CLAVES EM MOVIMENTO) */
+#studio-particles-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2; /* Posicionado atrás de todos os elementos e textos do site */
+    pointer-events: none;
+    background: radial-gradient(circle at center, #101017 0%, var(--bg-dark-base) 90%);
+}
+
+/* Grid tecnológica sutil simulando mesa de controle */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(rgba(197, 168, 128, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(197, 168, 128, 0.015) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+/* 3. BARRA SMARTPHONE RÁPIDA DE FECHAMENTO */
+.mobile-contact-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(6, 6, 8, 0.96);
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    z-index: 9999;
+}
+
+.m-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.m-insta {
+    background: #131317;
+    color: var(--accent-gold-cria);
+    border-right: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.m-whats {
+    background: var(--accent-gold-cria);
+    color: #000;
+}
+
+/* 4. HEADER COPORATIVO ESTILO BOUTIQUE */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 8%;
+    background: rgba(6, 6, 8, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.01);
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #fff;
+}
+
+.logo-sub {
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--accent-gold-cria);
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+/* Brilho neon progressivo do logotipo */
+.animate-logo-glow {
+    animation: goldGlowSystem 2.5s infinite alternate ease-in-out;
+}
+
+@keyframes goldGlowSystem {
+    0% { text-shadow: 0 0 10px rgba(197, 168, 128, 0.3); color: #fff; }
+    100% { text-shadow: 0 0 25px rgba(197, 168, 128, 0.7); color: var(--accent-gold-cria); }
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: var(--text-white);
+    text-decoration: none;
+    margin-left: 28px;
+    transition: color 0.3s ease;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+nav a:hover {
+    color: var(--accent-gold-cria);
+    opacity: 1;
+}
+
+nav a.nav-btn {
+    background: transparent;
+    border: 1px solid var(--accent-gold-cria);
+    color: var(--accent-gold-cria) !important;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-left: 30px;
+    letter-spacing: 1.5px;
+    transition: all 0.3s;
+}
+
+nav a.nav-btn:hover {
+    background: var(--accent-gold-cria);
+    color: #000 !important;
+    box-shadow: 0 4px 20px rgba(197, 168, 128, 0.3);
+}
+
+/* 5. INTRODUÇÃO IMPACTANTE (HERO) */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 160px 20px 80px;
+}
+
+.hero-content {
+    max-width: 850px;
+    z-index: 2;
+}
+
+.hero-tagline {
+    display: inline-block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: var(--accent-gold-cria);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.animated-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 3.6rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.animated-logo span {
+    color: var(--accent-gold-cria);
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--text-dimmed);
+    max-width: 650px;
+    margin: 0 auto 40px;
+    font-weight: 300;
+}
+
+/* Animações e impulsos de botões */
+.btn {
+    background: var(--accent-gold-cria);
+    color: #000;
+    padding: 16px 42px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn:hover {
+    background: var(--text-white);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(197, 168, 128, 0.3);
+}
+
+.hero-image-container {
+    position: relative;
+    max-width: 950px;
+    width: 100%;
+    margin-top: 40px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 40px 90px rgba(0,0,0,0.8);
+    border: 1px solid rgba(255,255,255,0.01);
+}
+
+.hero-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 40%, var(--bg-dark-base));
+    z-index: 1;
+}
+
+.hero-central-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 460px;
+    object-fit: cover;
+    filter: grayscale(35%) contrast(104%);
+}
+
+/* 6. VITRINE DE SERVIÇOS CRIA STYLE */
+.packages-section {
+    padding: 120px 8%;
+    background-color: var(--panel-dark-matte);
+}
+
+.section-header-clean {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-subtitle-top {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent-gold-cria);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+}
+
+.luxury-divider {
+    width: 35px;
+    height: 1px;
+    background: var(--accent-gold-cria);
+    margin: 18px auto 0;
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 30px;
+}
+
+.package-card {
+    background: #07070a;
+    border-radius: 6px;
+    padding: 50px 35px;
+    border: 1px solid rgba(255,255,255,0.01);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+}
+
+.package-card:hover {
+    border-color: var(--accent-gold-cria);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.package-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    margin: 12px 0 15px;
+}
+
+.card-category {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent-gold-cria);
+    font-weight: 600;
+}
+
+.pack-desc {
+    color: var(--text-dimmed);
+    font-size: 0.88rem;
+    margin-bottom: 30px;
+    min-height: 65px;
+    font-weight: 300;
+}
+
+.pack-features {
+    list-style: none;
+    margin-bottom: 40px;
+    flex-grow: 1;
+}
+
+.pack-features li {
+    font-size: 0.88rem;
+    margin-bottom: 12px;
+    color: #cccccc;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.pack-features li::before {
+    content: "•";
+    color: var(--accent-gold-cria);
+}
+
+.btn-pack {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #fff;
+    text-decoration: none;
+    padding: 14px;
+    text-align: center;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.package-card:hover .btn-pack {
+    background: var(--accent-gold-cria);
+    border-color: var(--accent-gold-cria);
+    color: #000;
+}
+
+.featured-pack {
+    border: 1px solid rgba(197, 168, 128, 0.3);
+    background: #0b0b10;
+}
+
+/* 7. REPRODUTOR CONSOLE PIONEER INTERATIVO */
+.portfolio {
+    padding: 120px 8%;
+    background-color: var(--bg-dark-base);
+}
+
+.pioneer-console {
+    max-width: 950px;
+    margin: 50px auto 0;
+    background: #050507;
+    border: 4px solid #1c1c24;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.8);
+}
+
+.dj-display {
+    background: #000;
+    border: 2px solid #14141f;
+    border-radius: 4px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    color: var(--pioneer-blue);
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+.wave-visualizer {
+    width: 70%;
+    height: 25px;
+    background: #030306;
+    position: relative;
+    overflow: hidden;
+}
+
+.wave-line {
+    width: 100%;
+    height: 3px;
+    background: currentColor;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);}
