@@ -4,24 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DJ MATO Studios | Gravadora, Selo e Produção Musical</title>
-    <!-- Fontes oficiais do estilo digital e moderno (Cinzel e Inter) -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- CANVAS PARA A ANIMAÇÃO DE SÍMBOLOS MUSICAIS FLUTUANTES -->
     <canvas id="studio-particles-bg"></canvas>
 
-    <!-- BARRA FIXA PARA SMARTPHONES -->
     <div class="mobile-contact-bar">
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="m-btn m-insta">Instagram</a>
-        <a href="https://wa.me!" target="_blank" rel="noopener noreferrer" class="m-btn m-whats">WhatsApp</a>
+        <a href="https://instagram.com" target="_blank" class="m-btn m-insta">Instagram</a>
+        <a href="https://wa.me/5511984690451" target="_blank" class="m-btn m-whats">WhatsApp</a>
     </div>
 
-    <!-- Menu Superior Estilo Digital Cyber -->
     <header>
         <div class="logo-container">
             <div class="logo animate-logo-glow">DJ MATO</div>
@@ -32,165 +29,111 @@
             <a href="#packages">Selo</a>
             <a href="#beats">Mesa Virtual</a>
             <a href="#media-gallery">Clipes</a>
-            <a href="#contact" class="nav-btn">Contato</a>
+            <a href="#contato" class="nav-btn">Contato</a>
         </nav>
     </header>
 
-    <!-- Seção Hero — Rock & Cyber Music Style -->
     <section class="hero" id="home">
         <div class="hero-content-split">
             <div class="hero-text-side">
                 <span class="hero-tagline">GRAVADORA & COMPOSIÇÃO</span>
                 <h1 class="animated-logo">Lapidando talentos, distribuindo <span>hits</span></h1>
                 <p>Produção fonográfica completa, composição musical exclusiva e licenciamento de obras. O selo boutique feito para levar o seu som às plataformas globais.</p>
-                <button class="btn btn-animate" id="hero-btn">Get started!</button>
+                <button class="btn" onclick="document.getElementById('beats').scrollIntoView({behavior:'smooth'})">OUÇA AGORA</button>
             </div>
-            <!-- Lado Ilustrativo baseado na Imagem Enviada -->
             <div class="hero-vector-side">
-                <div class="vector-glow-backdrop"></div>
-                <img src="https://unsplash.com" alt="Music Style Concept" class="hero-vector-img">
+                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=600" alt="Music Style" class="hero-vector-img">
             </div>
         </div>
     </section>
 
-    <!-- Serviços da Gravadora -->
     <section class="packages-section" id="packages">
-        <div class="section-header-clean">
+        <div class="section-header-clean" style="text-align:center; margin-bottom:40px;">
             <span class="section-subtitle-top">SOLUÇÕES</span>
             <h2 class="section-title">Nossos Serviços</h2>
-            <div class="luxury-divider"></div>
         </div>
-        
         <div class="packages-grid">
             <div class="package-card">
                 <span class="card-category">AUDIO PRODUCTION</span>
                 <h3>Produção e Selo</h3>
-                <p class="pack-desc">Criação de instrumentais e arranjos exclusivos, captação de voz em alto padrão, mixagem e masterização analógica prontas para o mercado.</p>
-                <a href="https://wa.me!" target="_blank" rel="noopener noreferrer" class="btn-pack">Enviar Demo</a>
+                <p class="pack-desc">Criação de instrumentais e arranjos exclusivos, mixagem e masterização analógica.</p>
+                <a href="https://wa.me/5511984690451" target="_blank" class="btn-pack">Enviar Demo</a>
             </div>
-
-            <div class="package-card featured-pack">
-                <span class="card-category">SONGWRITING & LYRICS</span>
+            <div class="package-card">
+                <span class="card-category">SONGWRITING</span>
                 <h3>Composição Exclusiva</h3>
-                <p class="pack-desc">Desenvolvimento de letras, melodias e guias completas personalizadas para o seu estilo vocal e positioning de carreira.</p>
-                <a href="https://wa.me!" target="_blank" rel="noopener noreferrer" class="btn-pack">Encomendar Letra</a>
+                <p class="pack-desc">Letras, melodias e guias completas personalizadas para seu estilo.</p>
+                <a href="https://wa.me/5511984690451" target="_blank" class="btn-pack">Encomendar Letra</a>
             </div>
-
             <div class="package-card">
                 <span class="card-category">MUSIC BUSINESS</span>
                 <h3>Licenciamento</h3>
-                <p class="pack-desc">Inserção de músicas em campanhas publicitárias, trilhas sonoras e gestão completa de Royalties junto aos órgãos de arrecadação.</p>
-                <a href="https://wa.me!" target="_blank" rel="noopener noreferrer" class="btn-pack">Saber Mais</a>
+                <p class="pack-desc">Inserção em campanhas e gestão completa de Royalties.</p>
+                <a href="https://wa.me/5511984690451" target="_blank" class="btn-pack">Saber Mais</a>
             </div>
         </div>
     </section>
 
-    <!-- CONTROLADOR VIRTUAL PIONEER DJ -->
-    <section class="portfolio" id="beats">
-        <div class="section-header-clean">
+    <!-- MESA VIRTUAL - UNICA E LIMPA -->
+    <section class="portfolio" id="beats" style="padding:80px 8%; background:#0d0820;">
+        <div style="text-align:center; margin-bottom:30px;">
             <span class="section-subtitle-top">PRO DJ SYSTEM</span>
-            <h2 class="section-title">Virtual Setup Control</h2>
-            <div class="luxury-divider"></div>
+            <h2 class="section-title">Mesa Virtual DJ Mato</h2>
         </div>
 
-        <div class="pioneer-console" id="pioneer-console">
-            <audio id="main-audio" crossorigin="anonymous"></audio>
-            
-            <div class="dj-display">
-                <div class="wave-deck">
-                    <span id="current-title">Selecione uma faixa</span>
-                    <div class="wave-visualizer"><div class="wave-line"></div></div>
+        <div class="mesa-mato">
+            <div class="mesa-topo"><b>DJ MATO</b><span>VIRTUALLY - AO VIVO</span></div>
+            <div class="mesa-corpo">
+                <div class="deck-mato">
+                    <small>PIONEER A</small>
+                    <div class="jog-mato" id="jogA"></div>
+                    <div class="nome-musica">PREPARA O COPO 2</div>
+                    <button class="btn-play" id="btnA">▶</button>
+                    <audio id="somA" src="musica1.mp3" preload="auto"></audio>
                 </div>
-                <div class="display-timer" id="current-time">0:00</div>
-            </div>
-
-            <div class="decks-container">
-                <div class="pioneer-deck">
-                    <div class="deck-brand">Pioneer</div>
-                    <div class="jog-wheel" id="vinyl-l">
-                        <div class="jog-inner-display">
-                            <div class="jog-led-pointer"></div>
-                        </div>
-                    </div>
-                    <div class="deck-controls">
-                        <button class="dj-cue" id="cue-btn-l">CUE</button>
-                        <button class="dj-play-pause btn-scale-animate" id="play-btn-l">▶</button>
-                    </div>
+                <div class="mixer-mato">
+                    <b>VIRTUALLY</b>
+                    <input type="range" class="crossfader" id="crossMato" min="0" max="100" value="50">
+                    <small style="display:block; margin-top:8px; font-size:9px; opacity:0.6;">CROSSFADER</small>
+                    <a href="https://wa.me/5511984690451" target="_blank" class="btn-contratar">WHATSAPP</a>
                 </div>
-
-                <div class="central-mixer">
-                    <div class="mixer-brand">VIRTUALLY</div>
-                    <div class="v-led-container">
-                        <div class="led-bar"><div class="led-fill" id="led-l"></div></div>
-                        <div class="led-bar"><div class="led-fill" id="led-r"></div></div>
-                    </div>
-                    <div class="faders-rack">
-                        <div class="mixer-knob"></div>
-                        <div class="fader-track"><div class="fader-handle" style="bottom: 70%"></div></div>
-                    </div>
-                </div>
-
-                <div class="pioneer-deck">
-                    <div class="deck-brand">Pioneer</div>
-                    <div class="jog-wheel" id="vinyl-r">
-                        <div class="jog-inner-display">
-                            <div class="jog-led-pointer"></div>
-                        </div>
-                    </div>
-                    <div class="deck-controls">
-                        <button class="dj-cue" id="cue-btn-r">CUE</button>
-                        <button class="dj-play-pause btn-scale-animate" id="play-btn-r">▶</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="global-player-controls">
-                <div class="progress-bar-container" id="progress-container">
-                    <div class="p-bar"><div class="p-fill" id="progress-fill"></div></div>
-                </div>
-                <div class="track-list" id="track-list"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GALERIA DE VIDEOCLIPES OFICIAIS CANAL PERIGO BEATS -->
-    <section class="media-section" id="media-gallery">
-        <div class="section-header-clean">
-            <span class="section-subtitle-top">VISUAL AUDIO</span>
-            <h2 class="section-title">Videoclipes Oficiais</h2>
-            <div class="luxury-divider"></div>
-        </div>
-        
-        <div class="media-grid">
-            <div class="media-card video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://youtube.com" title="PREPARA O COPO 2 - Perigo Beats" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="media-info">
-                    <h4>PREPARA O COPO 2</h4>
-                    <p>Produção fonográfica por DJ MATO Studios & Perigo Beats.</p>
-                </div>
-            </div>
-            <div class="media-card video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://youtube.com" title="MALANDRA MANIACA - Perigo Beats" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="media-info">
-                    <h4>MALANDRA MANIACA</h4>
-                    <p>Processo de composição de letra e arranjos no estúdio.</p>
+                <div class="deck-mato">
+                    <small>PIONEER B</small>
+                    <div class="jog-mato" id="jogB"></div>
+                    <div class="nome-musica">MALANDRA MANIACA</div>
+                    <button class="btn-play" id="btnB">▶</button>
+                    <audio id="somB" src="musica2.mp3" preload="auto"></audio>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO DE CONTATO ATUALIZADA LADO A LADO - COM ÍCONES E DADOS EXPOSTOS -->
-    <section class="contact-section" id="contact">
-        <div class="contact-hub-wrapper">
-            <div class="studio-status-container">
-                <div class="studio-status-anim"><span class="status-dot"></span> Selo Aberto para Audições</div>
+    <section class="media-section" id="media-gallery" style="padding:80px 8%;">
+        <div class="media-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:30px;">
+            <div class="media-card video-card">
+                <div class="video-wrapper" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; background:#000; border-radius:12px;">
+                    <iframe src="https://www.youtube.com/embed/-fa9olSvFQI?rel=0" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="media-info" style="padding:20px;"><h4>PREPARA O COPO 2</h4></div>
             </div>
-            <h3 class="hub-main-title">Canais Diretos de Atendimento</h3>
-            <p class="hub-main-subtitle">Todas as informações de contato oficiais da DJ MATO Studios estão listadas ao lado com os ícones integrados:</p>
+            <div class="media-card video-card">
+                <div class="video-wrapper" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; background:#000; border-radius:12px;">
+                    <iframe src="https://www.youtube.com/embed/aUiNPXIrUaM?rel=0" style="position:absolute; top:0; left:0; width:100%; height:100%;" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="media-info" style="padding:20px;"><h4>MALANDRA MANIACA</h4></div>
+            </div>
+        </div>
+    </section>
 
-            <div class="contact-blocks-horizontal">
-                <!-- WhatsApp Card -->
+    <section id="contato" class="secao-contatos">
+        <div class="contatos-grid">
+            <div class="contato-card"><a class="icone-botao"><i class="fa-solid fa-location-dot"></i></a><h3>LOCALIZAÇÃO</h3><p>São Paulo - SP</p></div>
+            <div class="contato-card destaque"><a href="https://wa.me/5511984690451" target="_blank" class="icone-botao wpp"><i class="fa-solid fa-phone"></i></a><h3>NUMERO</h3><p>+55 11 98469-0451</p></div>
+            <div class="contato-card"><a href="mailto:Johnny.oliverofc@gmail.com" class="icone-botao email"><i class="fa-solid fa-envelope"></i></a><h3>E-MAIL</h3><p>Johnny.oliverofc@gmail.com</p></div>
+        </div>
+    </section>
+
+    <!-- JAVA SEPARADO -->
+    <script src="script.js"></script>
+</body>
+</html>
